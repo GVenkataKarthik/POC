@@ -1,0 +1,29 @@
+﻿@model List<Orders>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                OrderId
+            </th>
+            <th>
+                OrderName
+            </th>
+            <th>
+                DisplayOrder
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.OrderId</td>
+                <td>@obj.OrderName</td>
+                <td>@obj.DisplayOrder</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
