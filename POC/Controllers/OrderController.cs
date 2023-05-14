@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 using POC.Database;
 using POC.Models;
 
@@ -16,6 +17,11 @@ namespace POC.Controllers
         {
             List<Orders> objOrders = _objDBContext.Orders.ToList();
             return View(objOrders);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }

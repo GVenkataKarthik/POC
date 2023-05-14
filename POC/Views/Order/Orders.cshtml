@@ -1,29 +1,43 @@
 ﻿@model List<Orders>
 
-
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>
-                OrderId
-            </th>
-            <th>
-                OrderName
-            </th>
-            <th>
-                DisplayOrder
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var obj in Model)
-        {
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-6">
+            <h2 class="text-primary">Order List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <h2 class="text-primary">
+                
+                <a asp-controller="Order" asp-action="Create" class="btn btn-primary">
+                    Create A New Order - <i class="bi bi-cart-plus"></i>
+                </a>
+            </h2>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
             <tr>
-                <td>@obj.OrderId</td>
-                <td>@obj.OrderName</td>
-                <td>@obj.DisplayOrder</td>
+                <th>
+                    OrderId
+                </th>
+                <th>
+                    OrderName
+                </th>
+                <th>
+                    DisplayOrder
+                </th>
             </tr>
-        }
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>@obj.OrderId</td>
+                    <td>@obj.OrderName</td>
+                    <td>@obj.DisplayOrder</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-    </tbody>
-</table>
+</div>
